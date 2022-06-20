@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+
+/* General */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --scissors-gradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --paper-gradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --rock-gradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  --cyan: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+  --radial-gradient: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+}
+
+html {
+  background: hsl(214, 47%, 23%);
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  margin-inline: auto;
+  width: 375px;
+}
+
+body {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 30px 30px 55px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+/* Header */
+
+header {
+  align-items: center;
+  border: var(--header-outline) solid;
+  border-radius: 5px;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  margin-bottom: 105px;
+  padding: 10px 10px 10px 20px;
+}
+
+header h1 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+header .score {
+  background-color: white;
+  border-radius: 5px;
+  height: 100%;
+  padding-block: 10px;
+  text-align: center;
+  width: 80px;
+}
+
+header h2 {
+  color: var(--score-text);
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+header .value {
+  color: var(--dark-text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Rock, Paper, Scissors Images */
+
+.img-container {
+  align-items: center;
+  aspect-ratio: 1;
+  background-color: white;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 15px;
+  display: flex;
+  justify-content: center;
+  width: 130px;
+}
+
+.rock-container {
+  border-color: hsl(349, 71%, 52%);
+  box-shadow:
+    0 5px hsl(349, 54%, 39%),
+    0 5px hsl(0, 0%, 75%) inset;
+}
+
+.paper-container {
+  border-color: hsl(230, 89%, 62%);
+  box-shadow:
+    0 5px hsl(230, 69%, 48%),
+    0 5px hsl(0, 0%, 75%) inset;
+}
+
+.scissors-container {
+  border-color: hsl(39, 89%, 49%);
+  box-shadow:
+    0 5px hsl(39, 69%, 39%),
+    0 5px hsl(0, 0%, 75%) inset;
+}
+
+.rock,
+.paper,
+.scissors {
+  color: transparent;
+  width: 45px;
+}
+
+.rock {
+  height: 45px;
+}
+
+.paper {
+  height: 55px;
+}
+
+.scissors {
+  height: 50px;
+}
+
+/* step-1 */
+
+main .step-1 {
+  background: url(images/bg-triangle.svg) no-repeat;
+  background-position: 65px 65px;
+  background-size: 185px 150px;
+  display: grid;
+  grid-template-areas:
+    "paper scissors"
+    "rock  rock    ";
+  grid-template-columns: 130px 130px;
+  grid-template-rows: 130px 130px;
+  height: 280px;
+  justify-items: center;
+  place-content: space-between;
+}
+
+main .step-1 .img-container {
+  cursor: pointer;
+}
+
+main .step-1 .paper-container {
+  grid-area: paper;
+}
+
+main .step-1 .scissors-container {
+  grid-area: scissors;
+}
+
+main .step-1 .rock-container {
+  grid-area: rock;
+}
+
+/* step-2-3 */
+
+main .step-2-3 {
+  display: grid;
+  grid-template-areas:
+    "you-img house-img"
+    "you-h2  house-h2 ";
+  grid-template-columns: 130px 130px;
+  grid-template-rows: 130px 1rem;
+  height: 175px;
+  justify-items: center;
+  margin-block: -10px 70px;
+  place-content: space-between;
+}
+
+main .step-2-3>div {
+  display: contents;
+}
+
+main .step-2-3 h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+main .step-2-3 .you>div {
+  grid-area: you-img;
+}
+
+main .step-2-3 .you h2 {
+  grid-area: you-h2;
+}
+
+main .step-2-3 .house-picked {
+  aspect-ratio: 1;
+  background-color: #1a2946;
+  border: hsl(214, 47%, 23%) solid 15px;
+  border-radius: 50%;
+  grid-area: house-img;
+}
+
+main .step-2-3 .house h2 {
+  grid-area: house-h2;
+}
+
+/* step-4 */
+
+main .step-4 {
+  margin-inline: auto;
+  width: 220px;
+}
+
+main .step-4 h2 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+main .step-4 button {
+  border: 0;
+  border-radius: 10px;
+  color: var(--dark-text);
+  font: inherit;
+  height: 50px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* footer */
+
+footer {
+  align-self: center;
+  margin-top: auto;
+}
+
+footer button {
+  background-color: transparent;
+  border-color: white;
+  border-radius: 10px;
+  border-style: solid;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  height: 45px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  width: 130px;
+}
+
+/* rules */
+
+footer .rules {
+  align-items: center;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  left: 0;
+  padding: 95px 30px 65px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+footer .rules h2 {
+  color: var(--dark-text);
+  font-size: 2rem;
+  text-align: center;
+}
+
+footer .rules .close {
+  order: 1;
+  width: 20px;
+}
+
+footer .rules .rules-img {
+  margin-bottom: 50px;
+}
+
+/* Desktop */
+
+@media (min-width: 1200px) {
+  html {
+    width: 100vw;
+  }
+
+  body {
+    padding: 45px 35px 35px;
+  }
+
+  header {
+    margin-inline: auto;
+    width: 700px;
+  }
+
+  header {
+    border-radius: 15px;
+    height: 155px;
+    margin-bottom: 65px;
+    padding: 15px 20px 15px 35px;
+  }
+
+  header h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 0.8;
+  }
+
+  header .score {
+    padding: 20px 50px;
+    width: 150px;
+  }
+
+  header h2 {
+    font-size: 1rem;
+    letter-spacing: 2.5px;
+  }
+
+  header .value {
+    font-size: 4rem;
+  }
+
+  .img-container {
+    border-width: 20px;
+    width: 200px;
+  }
+
+  .rock-container {
+    box-shadow:
+      0 10px hsl(349, 54%, 39%),
+      0 10px hsl(0, 0%, 75%) inset;
+  }
+  
+  .paper-container {
+    box-shadow:
+      0 10px hsl(230, 69%, 48%),
+      0 10px hsl(0, 0%, 75%) inset;
+  }
+  
+  .scissors-container {
+    box-shadow:
+      0 10px hsl(39, 69%, 39%),
+      0 10px hsl(0, 0%, 75%) inset;
+  }
+
+  .rock,
+  .paper,
+  .scissors {
+    height: 80px;
+    width: 70px;
+  }
+
+  main .step-1 {
+    background-position: 100px 100px;
+    background-size: 280px 220px;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px;
+    height: 420px;
+    margin-inline: auto;
+    width: 480px;
+  }
+
+  main .step-2-3 .img-container {
+    border-width: 35px;
+    width: 300px;
+  }
+
+  main .step-2-3 .rock,
+  main .step-2-3 .paper,
+  main .step-2-3 .scissors {
+    height: 120px;
+    width: 100px;
+  }
+
+  main .step-2-3 {
+    grid-template-areas: 
+      "you-h2  house-h2 "
+      "you-img house-img";
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 20px 300px;
+    height: 380px;
+    margin-inline: auto;
+    margin-top: 15px;
+    width: 660px;
+  }
+
+  main .step-2-3 h2 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+  }
+}
+
+/* .d-none */
+
+main .d-none,
+footer .d-none {
+  display: none;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Rock<br>Paper<br>Scissors</h1>
+    <div class="score">
+      <h2>Score</h2>
+      <div class="value">12</div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="step-1" id="step1">
+      <div class="img-container paper-container" id="paper"><img class="paper"
+          src="images/icon-paper.svg" alt="Paper"></div>
+      <div class="img-container scissors-container" id="scissors"><img class="scissors"
+          src="images/icon-scissors.svg" alt="Scissors"></div>
+      <div class="img-container rock-container" id="rock"><img class="rock"
+          src="images/icon-rock.svg" alt="Rock"></div>
+    </section>
+
+    <section class="step-2 step-2-3 d-none" id="step2">
+      <div class="you">
+        <h2>You Picked</h2>
+        <div class="img-container rock-container"><img class="rock" src="images/icon-rock.svg"
+            alt="Rock"></div>
+      </div>
+      <div class="house">
+        <h2>The House Picked</h2>
+        <div class="house-picked"></div>
+      </div>
+    </section>
+
+    <section class="step-3 step-2-3 d-none" id="step3">
+      <div class="you">
+        <h2>You Picked</h2>
+        <div class="img-container rock-container"><img class="rock" src="images/icon-rock.svg"
+            alt="Rock"></div>
+      </div>
+      <div class="house">
+        <h2>The House Picked</h2>
+        <div class="img-container scissors-container"><img class="scissors"
+            src="images/icon-scissors.svg" alt="Scissors"></div>
+      </div>
+    </section>
+
+    <section class="step-4-lose step-4 d-none" id="step4Lose">
+      <h2>You Lose</h2>
+      <button type="button">Play Again</button>
+    </section>
+
+    <section class="step-4-win step-4 d-none" id="step4Lose">
+      <h2>You Win</h2>
+      <button type="button">Play Again</button>
+    </section>
+
+  </main>
+
+  <footer><button type="button">Rules</button>
+
+    <section class="rules d-none">
+      <h2>Rules</h2>
+      <img class="close" src="images/icon-close.svg" alt="Close"><img class="rules-img"
+        src="images/image-rules.svg" alt="Rules">
+    </section>
+
+  </footer>
+
+</body>
+
+</html>
