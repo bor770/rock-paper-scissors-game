@@ -257,6 +257,7 @@
 }
 
 .rules__close {
+  cursor: pointer;
   order: 1;
 }
 
