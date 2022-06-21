@@ -10,76 +10,51 @@
 
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
 </head>
 
-<body>
+<body class="body">
 
-  <header>
-    <h1>Rock<br>Paper<br>Scissors</h1>
-    <div class="score">
-      <h2>Score</h2>
-      <div class="value">12</div>
+  <header class="header body__header">
+    <h1 class="header__title">Rock<br>Paper<br>Scissors</h1>
+    <div class="header__score">
+      <h2 class="header__score-title">Score</h2>
+      <div class="header__score-value">12</div>
     </div>
   </header>
 
-  <main>
+  <div class="step-1 body__step-1">
+    <div class="rps rps_paper step-1__rps step-1__rps_paper"></div>
+    <div class="rps rps_scissors step-1__rps step-1__rps_scissors"></div>
+    <div class="rps rps_rock step-1__rps step-1__rps_rock"></div>
+  </div>
 
-    <section class="step-1" id="step1">
-      <div class="img-container paper-container" id="paper"><img class="paper"
-          src="images/icon-paper.svg" alt="Paper"></div>
-      <div class="img-container scissors-container" id="scissors"><img class="scissors"
-          src="images/icon-scissors.svg" alt="Scissors"></div>
-      <div class="img-container rock-container" id="rock"><img class="rock"
-          src="images/icon-rock.svg" alt="Rock"></div>
-    </section>
+  <div class="step-2 body__step-2 is-hidden">
+    <div class="step-2__you-house step-2__you-house_you">
+      <h2 class="step-2__title step-2__you-title">You Picked</h2>
+      <div class="rps rps_scissors step-2__rps step-2__rps_scissors"></div>
+    </div>
+    <div class="step-2__lose-win is-hidden">
+      <h2 class="step-2__lose-win-title">You Lose</h2>
+      <button class="step-2__play-again">Play Again</button>
+    </div>
+    <div class="step-2__you-house step-2__you-house_house">
+      <h2 class="step-2__title step-2__house_title">The House Picked</h2>
+      <div class="rps rps_blank step-2__step-2-blank"></div>
+      <div class="rps rps_rock step-2__rps step-2__rps_rock step-2__rps_rock_lose is-hidden"></div>
+    </div>
+  </div>
 
-    <section class="step-2 step-2-3 d-none" id="step2">
-      <div class="you">
-        <h2>You Picked</h2>
-        <div class="img-container rock-container"><img class="rock" src="images/icon-rock.svg"
-            alt="Rock"></div>
-      </div>
-      <div class="house">
-        <h2>The House Picked</h2>
-        <div class="house-picked"></div>
-      </div>
-    </section>
-
-    <section class="step-3 step-2-3 d-none" id="step3">
-      <div class="you">
-        <h2>You Picked</h2>
-        <div class="img-container rock-container"><img class="rock" src="images/icon-rock.svg"
-            alt="Rock"></div>
-      </div>
-      <div class="house">
-        <h2>The House Picked</h2>
-        <div class="img-container scissors-container"><img class="scissors"
-            src="images/icon-scissors.svg" alt="Scissors"></div>
-      </div>
-    </section>
-
-    <section class="step-4-lose step-4 d-none" id="step4Lose">
-      <h2>You Lose</h2>
-      <button type="button">Play Again</button>
-    </section>
-
-    <section class="step-4-win step-4 d-none" id="step4Lose">
-      <h2>You Win</h2>
-      <button type="button">Play Again</button>
-    </section>
-
-  </main>
-
-  <footer><button type="button">Rules</button>
-
-    <section class="rules d-none">
-      <h2>Rules</h2>
-      <img class="close" src="images/icon-close.svg" alt="Close"><img class="rules-img"
-        src="images/image-rules.svg" alt="Rules">
-    </section>
-
+  <footer class="footer body__footer">
+    <button class="footer__rules-button">Rules</button>
   </footer>
+
+  <div class="rules body__rules is-hidden">
+    <div class="rules__container">
+      <h2 class="rules__title">Rules</h2>
+      <img src="images/icon-close.svg" alt="Close" class="rules__close">
+      <img src="images/image-rules.svg" alt="Rules" class="rules__img">
+    </div>
+  </div>
 
 </body>
 
