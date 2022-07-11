@@ -1,0 +1,48 @@
+.step-1 {
+  background-image: url(../images/bg-triangle.svg);
+  background-position: 65px 65px;
+  background-repeat: no-repeat;
+  background-size: 185px 145px;
+  display: grid;
+  grid-template-areas:
+    "paper scissors"
+    "rock  rock    ";
+  grid-template-columns: 130px 130px;
+  grid-template-rows: 130px 130px;
+  height: 275px;
+  justify-items: center;
+  place-content: space-between;
+}
+
+.step-1__rps {
+  cursor: pointer;
+}
+
+.step-1__rps_rock {
+  grid-area: rock;
+}
+
+.step-1__rps_paper {
+  grid-area: paper;
+}
+
+.step-1__rps_scissors {
+  grid-area: scissors;
+}
+
+@media (min-width: 1200px) {
+  .step-1 {
+    background-position: 100px 100px;
+    background-size: 280px 225px;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px;
+    height: 425px;
+    width: 480px;
+  }
+
+  .step-1__rps {
+    --box-shadow-offset: 10px;
+    border-width: 20px;
+    width: 200px;
+  }
+}
